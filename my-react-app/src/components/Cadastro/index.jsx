@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, TextField, Typography } from "@mui/material";
 
+import { Link } from "react-router-dom";
 const STORAGE_KEY = "pecas_lista_v1";
 
 const Cadastro = () => {
@@ -8,6 +9,7 @@ const Cadastro = () => {
   const [artigo, setArtigo] = useState("");
   const [tonalidade, setTonalidade] = useState("");
   const [peso, setPeso] = useState("");
+  // const navigate = useNavigate();
 
   // opcional: manter a lista em memória também (útil para evitar ler do localStorage toda hora)
   const [lista, setLista] = useState([]);
@@ -95,9 +97,13 @@ const Cadastro = () => {
         </Button>
       </Box>
 
-      <Typography variant="body2" color="textSecondary" mt={2}>
-        Ao salvar, confira o console (F12) — a lista inteira será logada.
-      </Typography>
+     <Button
+        variant="outlined"
+        component={Link}  // transforma o botão em link
+        to="/lista"        // rota para onde vai
+      >
+        Ver Listagem
+      </Button>
     </Box>
   );
 };
