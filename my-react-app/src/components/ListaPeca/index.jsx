@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { MaterialReactTable } from "material-react-table";
 import { useNavigate } from "react-router-dom";
-
+import { LISTA_INICIAL } from "../../list";
 const STORAGE_KEY = "pecas_lista_v1";
 
 const tonalidades = [
@@ -18,7 +18,7 @@ const tonalidades = [
 const artigos = ["Poliester", "Lino", "Algodao"];
 
 const ListaPeca = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(LISTA_INICIAL);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
